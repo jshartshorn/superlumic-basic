@@ -5,13 +5,13 @@
   with_items:
     - wget
     - awscli
+    - python3
+    - python
+    - terraform
+    - packer
 
 - name: install AWS-specific dev cask applications
   homebrew_cask: name={{item}} state=present
   with_items:
-    - python3
     - vagrant
     - virtualbox
-    - python
-    - packer
-    - terraform
