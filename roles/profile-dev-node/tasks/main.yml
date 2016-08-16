@@ -18,7 +18,7 @@
   shell: . ~/.nvm/nvm.sh && nvm alias default {{ nvm.node_version }}
   when: nvm_check_default|failed
 
-- name: install node cask applications
-  homebrew_cask: name={{ item }} state=present
+- name: install node applications
+  homebrew: name={{ item }} state=present
   with_items:
     - phantomjs
