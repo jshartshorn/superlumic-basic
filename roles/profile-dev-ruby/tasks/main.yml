@@ -37,5 +37,12 @@
   shell: ~/.rbenv/bin/rbenv global {{ rbenv.ruby_version }}
   when: rbenv_check_default|failed
 
-- name: add rbenv to the user local bin
-  shell: ln -s ~/.rbenv/bin/rbenv /usr/local/bin/rbenv
+- file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items:
+    - { src: '~/.rbenv/bin/rbenv', dest: '/usr/local/bin/rbenv' }
+
+- name: add pow rack server for any rack app (ruby, rails, rails api, grape, sinatra, etc) for local development
+  get_url: url=http://get.pow.cx dest=/tmp/pow.sh mode=0755
+
+- name: Execute downloaded pow script
+  shell: /tmp/pow.sh > /dev/null
