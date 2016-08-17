@@ -36,3 +36,6 @@
 - name: set default ruby version to {{ rbenv.ruby_version }}
   shell: ~/.rbenv/bin/rbenv global {{ rbenv.ruby_version }}
   when: rbenv_check_default|failed
+
+- name: add rbenv to the user local bin
+  shell: ln -s ~/.rbenv/bin/rbenv /usr/local/bin/rbenv
