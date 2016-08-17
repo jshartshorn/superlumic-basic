@@ -39,3 +39,7 @@
 
 - name: add rbenv to the user local bin
   shell: ln -s ~/.rbenv/bin/rbenv /usr/local/bin/rbenv
+
+
+- name: add pow rack server for any rack app (ruby, rails, rails api, grape, sinatra, etc) for local development
+  shell: curl get.pow.cx | sh
