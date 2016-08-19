@@ -46,3 +46,9 @@
 
 - name: Execute downloaded pow script
   shell: /tmp/pow.sh > /dev/null
+
+- name: install ruby-gemset as an rbenv plugin
+  git: repo=https://github.com/jamis/rbenv-gemset.git dest=~/.rbenv/plugins/rbenv-gemset
+
+- name: install bundler
+  shell: ~/.rbenv/shims/gem install bundler
