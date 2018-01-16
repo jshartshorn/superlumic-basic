@@ -1,5 +1,10 @@
 # superlumic-config
 
+NOTE: jsh -> run this -> curl -s https://raw.githubusercontent.com/superlumic/superlumic/master/superlumic | bash -s https://github.com/jshartshorn/superlumic-basic.git
+
+* jsh: requires your username on your mac 
+* jsh: last param is git repo for clone
+
 This is a basic configuration repository for the Superlumic workstation configuration management toolset based off of Ansible.
 
 This repository is organized into the following roles and sets of configurations to ensure ease of use amongst the varying sets of tools that I use:
